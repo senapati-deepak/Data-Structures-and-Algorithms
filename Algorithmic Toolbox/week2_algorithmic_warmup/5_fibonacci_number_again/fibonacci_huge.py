@@ -1,19 +1,26 @@
 # Uses python3
-import sys
+def pisano(m):
+    a=0
+    b=1
+    for i in range(1, (m*m)+1):
+        c = (a+b) % m
+        a = b
+        b = c
+        if a == 0 and b==1:
+            return i
 
-def get_fibonacci_huge_naive(n, m):
-    if n <= 1:
-        return n
 
-    previous = 0
-    current  = 1
+a, b = map(int, input().split())
+l = pisano(b)
+n = a%l
+x = 0
+y = 1
+if n <= 1 :
+    print(n)
+else :
+    for i in range(2,n+1):
+        z = x+y
+        x = y
+        y = z
+    print(z%b)
 
-    for _ in range(n - 1):
-        previous, current = current, previous + current
-
-    return current % m
-
-if __name__ == '__main__':
-    input = sys.stdin.read();
-    n, m = map(int, input.split())
-    print(get_fibonacci_huge_naive(n, m))

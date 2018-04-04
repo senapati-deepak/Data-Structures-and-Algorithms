@@ -1,21 +1,14 @@
 # Uses python3
-import sys
-
-def fibonacci_sum_naive(n):
-    if n <= 1:
-        return n
-
-    previous = 0
-    current  = 1
-    sum      = 1
-
-    for _ in range(n - 1):
-        previous, current = current, previous + current
-        sum += current
-
-    return sum % 10
-
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    n = int(input)
-    print(fibonacci_sum_naive(n))
+n = int(input())
+a = 0
+b = 1
+z = 1
+if n <= 1:
+    print(n)
+else :
+    for i in range(2, n+1):
+        c = (a + b) % 10
+        a = b
+        b = c
+        z = (z + c) % 10
+    print(z)

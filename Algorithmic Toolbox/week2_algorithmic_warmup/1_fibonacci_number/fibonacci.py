@@ -1,9 +1,12 @@
-# Uses python3
-def calc_fib(n):
-    if (n <= 1):
-        return n
-
-    return calc_fib(n - 1) + calc_fib(n - 2)
-
+#python3
 n = int(input())
-print(calc_fib(n))
+a = 0
+b = 1
+if n <= 1 :
+    print(n)
+else :
+    for i in range(2,n+1):
+        c = a+b
+        a = b
+        b = c
+    print(c)
