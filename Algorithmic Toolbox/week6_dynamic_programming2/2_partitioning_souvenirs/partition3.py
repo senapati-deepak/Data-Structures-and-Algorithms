@@ -17,4 +17,3 @@ if __name__ == '__main__':
     input = sys.stdin.read()
     n, *A = list(map(int, input.split()))
     print(partition3(A))
-
